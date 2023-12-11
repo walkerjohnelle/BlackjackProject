@@ -30,12 +30,14 @@ public class Deck {
 	}
 
 	public Card dealCard() {
-	    if (cards.isEmpty()) {
-	        System.out.println("The deck is empty. Unable to deal a card.");
-	        return null;
-	    }
-	    
-	    return cards.remove(0);
+		if (cards.isEmpty()) {
+			throw new IllegalStateException("Deck is empty.");
+		}
+
+		return cards.remove(0);
 	}
 
+	public boolean isEmpty() {
+		return cards.isEmpty();
+	}
 }
